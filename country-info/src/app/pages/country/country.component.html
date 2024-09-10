@@ -1,0 +1,38 @@
+<div class="country-page-wrapper">
+  <h2 class="country-heading">{{ countryName }}</h2>
+
+  <div class="container">
+    <ul class="holidays-list">
+      <li class="list-item" *ngFor="let holiday of holidays">
+        <p class="item-text">
+          <span> {{ holiday.name }} ({{ holiday.localName }}) </span>
+        </p>
+        <p class="item-text">
+          <span>Date: </span>{{ holiday.date | date: 'MMMM d, y' }}
+        </p>
+      </li>
+    </ul>
+
+    <ul class="borders-countries-list">
+      <h3 class="borders-countries-heading">Neighbours:</h3>
+      <li class="list-item" *ngFor="let country of countryBorders">
+        <a
+          [routerLink]="['/country', country.countryCode]"
+          class="country-name-link"
+        >
+          {{ country.commonName }}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="year-selector">
+    <button
+      *ngFor="let year of years"
+      [class.active]="year === currentYear"
+      (click)="onYearChange(year)"
+    >
+      {{ year }}
+    </button>
+  </div>
+</div>
