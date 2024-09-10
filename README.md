@@ -12,10 +12,18 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ``git clone https://github.com/oleksanya/country-info-angular.git``
 
 2. Navigate to the Project Directory
-   ``cd country-info``
+   ``cd country-info-angular/country-info``
 
 4. Install Dependencies Use npm to install all project dependencies.
-
   ``npm install``
-  Run angular project
-5. ``npm run ng serve ``
+
+6.  Run angular project
+    ``npm run ng serve ``
+
+
+
+Screenshots
+
+![image](https://github.com/user-attachments/assets/46e47093-580f-4b5e-a1dc-81b06bba230a)
+
+![image](https://github.com/user-attachments/assets/c2448431-fe65-42b6-9e99-cc3e773ef4ee)
