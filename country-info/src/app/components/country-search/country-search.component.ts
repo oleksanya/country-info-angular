@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CommonModule, NgFor } from '@angular/common';
 import { CountryService } from './../../services/country.service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { Country } from '../../interfaces/Country.interface';
 
 @Component({
   selector: 'app-country-search',
@@ -16,9 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
 export class CountrySearchComponent implements OnInit {
   searchCountry: string = '';
 
-  allCountries: any = [];
-  searchedCountries: any[] = [];
-  countries: any[] = [];
+  allCountries: Country[] = [];
+  searchedCountries: Country[] = [];
+  countries: Country[] = [];
 
   constructor(private readonly countryService: CountryService) {}
 
@@ -32,7 +32,7 @@ export class CountrySearchComponent implements OnInit {
   searchChange() {
     const query = this.searchCountry.toLowerCase();
     this.searchedCountries = this.allCountries.filter(
-      (country: any) =>
+      (country) =>
         country.name.toLowerCase().includes(query) ||
         country.countryCode.toLowerCase().includes(query)
     );

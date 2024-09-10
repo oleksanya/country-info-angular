@@ -14,7 +14,7 @@
   <hr />
   <ul class="country-list">
     <li class="list-item" *ngFor="let country of searchedCountries">
-      <a [routerLink]="['/country', country.name]" class="item-link">
+      <a [routerLink]="['/country', country.countryCode]" class="item-link">
         {{ country.name }}, ({{ country.countryCode }})
       </a>
     </li>
